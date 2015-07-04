@@ -291,7 +291,7 @@ BURN_BLACKLIST := $(FBA_BURNER_DIR)/un7z.cpp \
 
 ifeq ($(EXTERNAL_ZLIB), 1)
 	BURN_BLACKLIST += $(FBA_BURNER_DIR)/unzip.c \
-		$(FBA_BURNER_DIR)/ioapi.c	
+		$(FBA_BURNER_DIR)/ioapi.c
 endif
 
 ifeq ($(HAVE_GRIFFIN), 1)
@@ -427,7 +427,7 @@ FBA_DEFINES := -DUSE_SPEEDHACKS -D__LIBRETRO__ \
 	-DWANT_NEOGEOCD \
 	$(ENDIANNESS_DEFINES) \
 	$(PLATFORM_DEFINES)
-	
+
 ifneq ($(platform),qnx)
    FBA_DEFINES += -DINLINE="static inline" -DSH2_INLINE="static inline"
 endif
@@ -459,7 +459,7 @@ INCFLAGS := -I$(FBA_BURNER_DIR)/win32 \
 	-I$(FBA_LIB_DIR)
 
 ifeq ($(LIBRETRO_OPTIMIZATIONS), 1)
-	FBA_DEFINES += -D__LIBRETRO_OPTIMIZATIONS__ 
+	FBA_DEFINES += -D__LIBRETRO_OPTIMIZATIONS__
 endif
 
 ifeq ($(DEBUG), 1)
@@ -479,8 +479,8 @@ else
 	WARNINGS_DEFINES = -Wno-write-strings
 endif
 
-CFLAGS += $(fpic) $(WARNINGS_DEFINES) $(FBA_DEFINES) $(PROFFLAGS) -std=gnu++0x
-CXXFLAGS += $(fpic) $(WARNINGS_DEFINES) $(FBA_DEFINES) $(PROFFLAGS) -std=gnu++0x
+CFLAGS += $(fpic) $(WARNINGS_DEFINES) $(FBA_DEFINES) $(PROFFLAGS)
+CXXFLAGS += $(fpic) $(WARNINGS_DEFINES) $(FBA_DEFINES) $(PROFFLAGS)
 LDFLAGS += $(fpic)
 
 ifeq ($(FRONTEND_SUPPORTS_RGB565), 1)
